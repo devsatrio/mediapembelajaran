@@ -43,6 +43,7 @@ class KontenhalamanController extends Controller
             KontenhalamanModel::where('id',$kode)
             ->update([
                 'judul'=>$request->judul,
+                'sub_judul'=>$request->subjudul,
                 'slug'=>strtolower(str_replace(' ','-',$request->judul)),
                 'isi'=>$request->isi,
                 'pembuat'=>Auth::user()->id,
@@ -53,6 +54,7 @@ class KontenhalamanController extends Controller
             KontenhalamanModel::where('id',$kode)
             ->update([
                 'judul'=>$request->judul,
+                'sub_judul'=>$request->subjudul,
                 'slug'=>strtolower(str_replace(' ','-',$request->judul)),
                 'isi'=>$request->isi,
                 'pembuat'=>Auth::user()->id,
@@ -116,6 +118,7 @@ class KontenhalamanController extends Controller
         KontenhalamanModel::insert([
             'id_halaman'=>$request->kode,
             'judul'=>$request->judul,
+            'sub_judul'=>$request->subjudul,
             'slug'=>strtolower(str_replace(' ','-',$request->judul)),
             'isi'=>$request->isi,
             'pembuat'=>Auth::user()->id,
@@ -147,6 +150,7 @@ class KontenhalamanController extends Controller
         KontenhalamanModel::insert([
             'id_halaman'=>$request->kode,
             'judul'=>$request->judul,
+            'sub_judul'=>$request->subjudul,
             'slug'=>strtolower(str_replace(' ','-',$request->judul)),
             'isi'=>$request->isi,
             'pembuat'=>Auth::user()->id,
@@ -181,6 +185,7 @@ class KontenhalamanController extends Controller
             KontenhalamanModel::where('id',$request->kodehalaman)
             ->update([
                 'judul'=>$request->judul,
+                'sub_judul'=>$request->subjudul,
                 'slug'=>strtolower(str_replace(' ','-',$request->judul)),
                 'isi'=>$request->isi,
                 'pembuat'=>Auth::user()->id,
@@ -191,6 +196,7 @@ class KontenhalamanController extends Controller
             KontenhalamanModel::where('id',$request->kodehalaman)
             ->update([
                 'judul'=>$request->judul,
+                'sub_judul'=>$request->subjudul,
                 'slug'=>strtolower(str_replace(' ','-',$request->judul)),
                 'isi'=>$request->isi,
                 'pembuat'=>Auth::user()->id,

@@ -25,63 +25,50 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
+                <div class="col-12">
+                    <div class="alert alert-warning">
+                        <h5><i class="icon fas fa-child"></i> Welcome Back !</h5>
+                        {{Auth::user()->level}} {{Auth::user()->name}}, Have a good day.
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{$jumlahmenu}}</h3>
 
-                            <p>New Orders</p>
+                            <p>Menu</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fas fa-th-large"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{url('menu')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
+                <div class="col-md-4">
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>{{$jumlahsubmenu}}</h3>
 
-                            <p>Bounce Rate</p>
+                            <p>Submenu</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fas fa-list-ul"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{url('submenu')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>44</h3>
-
-                            <p>User Registrations</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-md-4">
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{$jumlahhalaman}}</h3>
 
-                            <p>Unique Visitors</p>
+                            <p>Halaman</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
+                            <i class="fas fa-desktop"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{url('halaman')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

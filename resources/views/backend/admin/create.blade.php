@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Konfirmasi Password</label>

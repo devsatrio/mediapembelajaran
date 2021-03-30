@@ -8,6 +8,7 @@
                 </p>
             </a>
         </li>
+        @if(Auth::user()->level =='Super Admin')
         <li class="nav-item">
             <a href="{{url('/admin')}}" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
@@ -16,7 +17,8 @@
                 </p>
             </a>
         </li>
-        <li class="nav-item has-treeview">
+        @endif
+        <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-th-large"></i>
                 <p>
@@ -45,7 +47,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-paint-brush"></i>
                 <p>
@@ -73,15 +75,15 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
             <a href="{{url('/galeri')}}" class="nav-link">
                 <i class="nav-icon fas fa-images"></i>
                 <p>
                     Galeri
                 </p>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="{{url('/slider')}}" class="nav-link">
                 <i class="nav-icon fas fa-image"></i>
@@ -90,6 +92,7 @@
                 </p>
             </a>
         </li>
+        @if(Auth::user()->level =='Super Admin')
         <li class="nav-item">
             <a href="{{url('/setting-web')}}" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>
@@ -98,5 +101,6 @@
                 </p>
             </a>
         </li>
+        @endif
     </ul>
 </nav>

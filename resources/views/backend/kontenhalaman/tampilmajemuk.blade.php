@@ -49,6 +49,7 @@
                                         <th class="text-center">Gambar</th>
                                         <th>Judul</th>
                                         <th class="text-center">Tanggal Buat</th>
+                                        <th class="text-center">kode QR</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -64,8 +65,16 @@
                                         <td>{{$row->judul}}</td>
                                         <td class="text-center">{{$row->created_at}}</td>
                                         <td class="text-center">
-                                            <a href="{{url('edit-konten/'.$row->id)}}"
-                                                class="btn btn-success"><i class="fa fa-wrench"></i></a>
+                                            {!! QrCode::size(100)->generate(url('view-media/show/'.$row->slug)); !!}
+                                            <br>
+                                            <a href="{{url('manage-halaman/downloadkontenqr/'.$row->slug)}}"
+                                                class="btn btn-sm btn-warning mt-3">
+                                                Downlod QRCode
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{url('edit-konten/'.$row->id)}}" class="btn btn-success"><i
+                                                    class="fa fa-wrench"></i></a>
                                             <a href="{{url('hapus-konten/'.$row->id.'/'.$kode)}}" class="btn btn-danger"
                                                 onclick="return confirm('Hapus Data?')"><i class="fa fa-trash"></i></a>
                                         </td>

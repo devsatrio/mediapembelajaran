@@ -32,6 +32,10 @@
                                 <input type="text" class="form-control" name="judul" required autofocus>
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Sub Judul</label>
+                                <textarea name="subjudul" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Isi</label>
                                 <textarea name="isi" class="form-control textarea"></textarea>
                             </div>

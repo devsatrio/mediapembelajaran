@@ -4,16 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
-    <!-- Tell the browser to be responsive to screen width -->
+    @php
+    $datasetting = DB::table('web_setting')->orderby('id')->limit(1)->get();
+    @endphp
+    @foreach($datasetting as $dst)
+    <title>{{$dst->singkatan}} - ADMIN</title>
+    <link rel="shortcut icon" type="image/jpg" href="{{asset('images/setting/'.$dst->favicon)}}" />
+    <meta name="description" content="{{$dst->moto}}">
+    @endforeach
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('token')
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     @yield('customcss')
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
-    <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
@@ -120,11 +124,17 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
+            @php
+            $datasetting = DB::table('web_setting')->orderby('id')->limit(1)->get();
+            @endphp
+            @foreach($datasetting as $dst)
             <a href="#" class="brand-link">
-                <img src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+                <img src="{{asset('images/setting/'.$dst->logo)}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">{{$dst->nama}}</span>
             </a>
+            @endforeach
+
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -142,24 +152,15 @@
                         <a href="#" class="d-block">{{Auth::user()->username}}</a>
                     </div>
                 </div>
-
-                <!-- Sidebar Menu -->
                 @include('layouts/nav')
-
-                <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
         </aside>
         @yield('content')
     </div>
-
-    <!-- jQuery -->
     <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
-    <!-- Bootstrap 4 -->
     <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     @yield('customjs')
     <script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
     <script src="{{asset('assets/dist/js/demo.js')}}"></script>
     @yield('customscripts')
 </body>

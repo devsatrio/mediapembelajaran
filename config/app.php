@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         'Intervention\Image\ImageServiceProvider',
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         
 
     ],
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Image' => 'Intervention\Image\Facades\Image',
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
     ],
 
 ];

@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Password Baru*</label>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" autocomplete="new-password" name="password">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Konfirmasi Password Baru*</label>

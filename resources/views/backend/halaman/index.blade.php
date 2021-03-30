@@ -48,6 +48,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Bentuk</th>
+                                        <th class="text-center">QRCode</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -59,6 +60,32 @@
                                         <td>{{$row->nama}}</td>
                                         <td>{{$row->bentuk}}</td>
                                         <td class="text-center">
+                                            @if($row->bentuk=='Majemuk')
+                                            {!! QrCode::size(90)->generate(url('view-media/'.$row->slug)); !!}
+                                            @else
+                                            @php
+                                            $datakonten =
+                                            DB::table('konten_halaman')->where('id_halaman',$row->id)->get();
+                                            @endphp
+                                            @foreach($datakonten as $dkn)
+                                            {!! QrCode::size(90)->generate(url('view-media/show/'.$dkn->slug)); !!}
+                                            @endforeach
+                                            @endif
+                                            <br>
+                                            @if($row->bentuk=='Majemuk')
+                                            <a href="{{url('manage-halaman/downloadqr/'.$row->slug)}}"
+                                                class="btn btn-sm btn-warning mt-3">
+                                                Downlod QRCode
+                                            </a>
+                                            @else
+                                            <a href="{{url('manage-halaman/downloadkontenqr/'.$row->slug)}}"
+                                                class="btn btn-sm btn-warning mt-3">
+                                                Downlod QRCode
+                                            </a>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            
                                             <form action="{{url('halaman/'.$row->id)}}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete">
@@ -81,6 +108,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Bentuk</th>
+                                        <th class="text-center">QRCode</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </tfoot>

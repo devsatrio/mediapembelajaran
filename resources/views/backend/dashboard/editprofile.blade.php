@@ -44,14 +44,6 @@
                                 <label for="exampleInputEmail1">No. Telp</label>
                                 <input type="text" class="form-control" name="telp" value="{{$data->telp}}" required>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Level</label>
-                                <select name="level" class="form-control">
-                                    <option value="Admin" @if($data->level=="Admin") selected @endif>Admin</option>
-                                    <option value="Super Admin" @if($data->level=="Super Admin") selected @endif>Super
-                                        Admin</option>
-                                </select>
-                            </div>
                             <br>
                             <div class="form-group">
                                 <img src="{{asset('img/admin/'.$data->gambar)}}" alt="">
@@ -62,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Password Baru*</label>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" autocomplete="new-password" name="password">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Konfirmasi Password Baru*</label>
